@@ -59,3 +59,34 @@ Relații: Referințe la entitățile Carte și Utilizator.
 - id_utilizator (legătură cu utilizatorul care împrumută, cheie străină)
 - data_imprumut (data la care cartea a fost împrumutată)
 - data_returnare (data la care cartea a fost returnată)
+
+# Soluția de Implementare (Nu este implementată momentan)
+## 1. Model (Baza de Date și Clasele Model)
+
+Modelul gestionează datele și interacțiunile cu baza de date:
+
+### Structura bazei de date: 
+Folosim trei tabele principale în baza de date: Carte, Utilizator, și Împrumut, așa cum au fost descrise anterior. Relațiile dintre entități sunt gestionate prin chei străine (id_carte și id_utilizator în Împrumut) pentru a facilita legăturile între cărți și utilizatori.
+
+### Clasele Model:
+- CarteModel.php: Definirea metodei pentru a obține, adăuga, modifica și șterge cărți din baza de date.
+- UtilizatorModel.php: Definirea metodei pentru înregistrare, autentificare și gestionarea conturilor utilizatorilor.
+- ImprumutModel.php: Definirea metodei pentru gestionarea împrumuturilor și actualizarea statutului de disponibilitate al cărților.
+
+## 2. Controller
+
+Controlerele definesc funcțiile logice ale aplicației, inclusiv manipularea datelor din model și afișarea paginilor potrivite pentru utilizatori:
+
+- CarteController.php: Gestionează afișarea catalogului de cărți, căutarea, filtrarea și adăugarea de cărți noi (dacă există un rol de administrator).
+- UtilizatorController.php: Gestionează autentificarea, înregistrarea, deconectarea și vizualizarea profilului utilizatorului.
+- ImprumutController.php: Gestionează procesele de împrumut și returnare a cărților, actualizând baza de date în consecință.
+  
+Controlerele primesc date de la client (de ex. formulare de împrumut sau autentificare), le validează, și folosesc metode din model pentru a actualiza sau obține datele necesare.
+
+## 3. View (Interfața cu Utilizatorul)
+
+### Paginile principale includ:
+- Index.php: Pagina principală a catalogului de cărți.
+- Login.php / Register.php: Paginile de autentificare și înregistrare.
+- Profile.php: Pagină pentru utilizatori autentificați, unde pot vedea împrumuturile proprii și detalii despre cont.
+- BookDetails.php: Pagina de detalii ale unei cărți, unde utilizatorii pot vizualiza informațiile și starea cărții și, dacă sunt autentificați, o pot împrumuta.
