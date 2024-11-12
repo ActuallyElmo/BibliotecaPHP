@@ -38,3 +38,24 @@ Relații: Referințe la entitățile Carte și Utilizator.
 - Navigarea și căutarea în catalogul de cărți: Utilizatorii (autentificați sau neautentificați) pot căuta și naviga prin catalogul de cărți, filtrând după titlu, autor, gen și disponibilitate.
 - Împrumutul unei cărți: Utilizatorii autentificați pot solicita împrumutul unei cărți disponibile, iar aplicația va crea o înregistrare în tabelul Împrumut și va actualiza disponibilitatea cărții.
 - Returnarea unei cărți: Utilizatorii autentificați pot returna o carte împrumutată, iar aplicația va marca împrumutul ca închis și va actualiza disponibilitatea cărții.
+
+# Structura bazei de date
+ ### Tabelul Carte:
+- id_carte (cheie primară, identificator unic)
+- titlu (numele cărții)
+- autor (autorul cărții)
+- gen (genul literar)
+- an_publicare (anul publicării)
+- disponibilitate (statutul de disponibilitate: TRUE/FALSE)
+ ### Tabelul Utilizator:
+- id_utilizator (cheie primară, identificator unic)
+- nume și prenume (numele și prenumele utilizatorului)
+- email (unic pentru fiecare utilizator, pentru autentificare)
+- status_membru (poate fi "Standard", "Premium" sau "Admin")
+- parola (criptată pentru securitate)
+ ### Tabelul Împrumut:
+- id_imprumut (cheie primară, identificator unic)
+- id_carte (legătură cu cartea împrumutată, cheie străină)
+- id_utilizator (legătură cu utilizatorul care împrumută, cheie străină)
+- data_imprumut (data la care cartea a fost împrumutată)
+- data_returnare (data la care cartea a fost returnată)
