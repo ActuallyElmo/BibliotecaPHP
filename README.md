@@ -61,7 +61,7 @@ Relații: Referințe la entitățile Carte și Utilizator.
 - data_returnare (data la care cartea a fost returnată)
 
 # Soluția de Implementare (Nu este implementată momentan)
-## 1. Model (Baza de Date și Clasele Model)
+## 1. Model
 
 Modelul gestionează datele și interacțiunile cu baza de date:
 
