@@ -1,0 +1,23 @@
+[
+    { 
+        "titlu": "1984", 
+        "autor": "George Orwell", 
+        "gen": "Ficțiune", 
+        "an": 1949, 
+        "disponibilitate": 1
+    },
+    { 
+        "titlu": "Mândrie și prejudecată", 
+        "autor": "Jane Austen", 
+        "gen": "Roman", 
+        "an": 1913, 
+        "disponibilitate": 1
+    },
+    {
+        "titlu": "Fahrenheit 451",
+        "autor": "Ray Bradbury",
+        "gen": "Sci-Fi",
+        "an": 1953,
+        "disponibilitate": 1
+    }
+]
